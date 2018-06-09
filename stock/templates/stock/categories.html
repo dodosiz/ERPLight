@@ -1,0 +1,8 @@
+<ul>
+    {% if categories %}
+        {% for category in categories %}
+        <li><a href="{% url 'stock:stocks' category.id %}">{{category.name}}</a></li>
+        {% endfor %}
+    {% endif %}
+    <li><a href="{% url 'stock:add_category' department_id %}">Add</a></li>
+</ul>

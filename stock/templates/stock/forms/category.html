@@ -1,0 +1,14 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'stock/style.css' %}" />
+
+<form action="{% url 'stock:add_category' department.id %}" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="FormField">
+        {{ form.name.errors }}
+        <label for="{{ form.name.id_for_label }}">Category name:</label>
+        {{ form.name }}
+    </div>
+    <input type="submit" value="Submit" />
+</form>

@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+    </tr>
+    {% for stock in stocks %}
+    <tr>
+        <td>
+            {{stock.product.name}}
+        </td>
+        <td>
+            {{stock.quantity}}
+        </td>
+    </tr>
+    {% endfor %}
+</table>

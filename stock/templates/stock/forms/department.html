@@ -1,0 +1,64 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'stock/style.css' %}" />
+
+<form action="{% url 'stock:add_department' %}" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="FormField">
+        {{ form.department_name.errors }}
+        <label for="{{ form.department_name.id_for_label }}">Department name:</label>
+        {{ form.department_name }}
+    </div>
+    <div class="FormField">
+        {{ form.country.errors }}
+        <label for="{{ form.country.id_for_label }}">Country:</label>
+        {{ form.country }}
+    </div>
+    <div class="FormField">
+        {{ form.province.errors }}
+        <label for="{{ form.province.id_for_label }}">Province:</label>
+        {{ form.province }}
+    </div>
+    <div class="FormField">
+        {{ form.city.errors }}
+        <label for="{{ form.city.id_for_label }}">City:</label>
+        {{ form.city }}
+    </div>
+    <div class="FormField">
+        {{ form.street.errors }}
+        <label for="{{ form.street.id_for_label }}">Street:</label>
+        {{ form.street }}
+    </div><div class="FormField">
+        {{ form.number.errors }}
+        <label for="{{ form.number.id_for_label }}">Number:</label>
+        {{ form.number }}
+    </div>
+    <div class="FormField">
+        {{ form.postal_code.errors }}
+        <label for="{{ form.postal_code.id_for_label }}">Postal code:</label>
+        {{ form.postal_code }}
+    </div>
+    <div class="FormField">
+        {{ form.contact_name.errors }}
+        <label for="{{ form.contact_name.id_for_label }}">Contact name:</label>
+        {{ form.contact_name }}
+    </div>
+    <div class="FormField">
+        {{ form.email.errors }}
+        <label for="{{ form.email.id_for_label }}">Email:</label>
+        {{ form.email }}
+    </div>
+    <div class="FormField">
+        {{ form.telephone.errors }}
+        <label for="{{ form.telephone.id_for_label }}">Telephone:</label>
+        {{ form.telephone }}
+    </div>
+    <div class="FormField">
+        {{ form.telephone_2.errors }}
+        <label for="{{ form.telephone_2.id_for_label }}">Telephone 2:</label>
+        {{ form.telephone_2 }}
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+

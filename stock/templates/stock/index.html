@@ -1,0 +1,8 @@
+<ul>
+    {% if departments %}
+        {% for department in departments %}
+        <li><a href="{% url 'stock:categories' department.id %}">{{department.name}}</a></li>
+        {% endfor %}
+    {% endif %}
+    <li><a href="{% url 'stock:add_department' %}">Add</a></li>
+</ul>
